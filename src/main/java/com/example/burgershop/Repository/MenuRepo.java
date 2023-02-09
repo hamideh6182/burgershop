@@ -3,19 +3,16 @@ package com.example.burgershop.Repository;
 import com.example.burgershop.model.Menu;
 import org.springframework.stereotype.Repository;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.NoSuchElementException;
+import java.util.*;
 
 @Repository
 public class MenuRepo {
-    private final Map<Integer, Menu> menus = Map.of(
+    private final Map<Integer, Menu> menus = new HashMap<>(Map.of(
             1,new Menu(1,"Menu1",40.00,"CheeseBurger","Pommes","CocaCola"),
             2,new Menu(2,"Menu2",35.00,"HamBurger","Pommes","Fanta"),
             3,new Menu(3,"Menu3",30.00,"JalapenoBurger","Pommes","Soft"),
             4,new Menu(4,"Menu4",25.00,"VegiBurger","Pommes","OrangeSoft")
-    );
+    ));
 
     public Menu getMenu(int id){
         Menu menu = menus.get(id);
